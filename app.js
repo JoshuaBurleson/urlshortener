@@ -60,7 +60,7 @@ app.get('*',function(req, res){
                 }else{
                 //retrive entry
                 data = data[0];
-                res.end(JSON.stringify({original_url : result.url, short_url : 'https://tin-url.herokuapp.com/'+result.value}));
+                res.end(JSON.stringify({original_url : data.url, short_url : 'https://tin-url.herokuapp.com/'+data.value}));
                 db.close();
                 }   
             });
