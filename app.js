@@ -1,7 +1,7 @@
 const express = require('express');
 const mongo = require('mongodb').MongoClient;
+const validate = require('./custom_modules/urlValidator');
 
-var validate = require('./custom_modules/urlValidator');
 var dbPath = process.env.MONGOLAB_URI;
 var colTitle = 'urls';
 var app = express();
