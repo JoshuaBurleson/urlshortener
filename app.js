@@ -2,7 +2,7 @@ const express = require('express');
 const mongo = require('mongodb').MongoClient;
 
 var validate = require('./custom_modules/urlValidator');
-var dbPath = 'mongodb://user:password@ds163181.mlab.com:63181/surltest';
+var dbPath = process.env.MONGOLAB_URI;
 var colTitle = 'urls';
 var app = express();
 
