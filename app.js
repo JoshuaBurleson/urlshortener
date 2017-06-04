@@ -6,10 +6,7 @@ var dbPath = process.env.MONGOLAB_URI;
 var colTitle = 'urls';
 var app = express();
 
-
 app.use(require('./routes/index.js'));
-
-
 app.get('*',function(req, res){
     var site = req.url.slice(1);
     var result;
@@ -68,5 +65,4 @@ app.get('*',function(req, res){
         }
     });
 });
-
 app.listen(process.env.PORT || 3000);
