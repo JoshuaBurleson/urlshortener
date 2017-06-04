@@ -51,10 +51,11 @@ app.get('*',function(req, res){
                         var num = Number(data[0].value);
                         num += 1;
                         var newEntry = {url : site, value : num-1};
+                        var displayObj = {original_url : newEntry.url, short_url : newEntry.value};
                         //add new entry w/ shortened URL as new num
                         collection.insert(newEntry);
                         collection.update({_id : 'currentMax'}, {value : num});
-                        res.end(JSON.stringify(newEntry));
+                        res.end(JSON.stringify(displayObj));
                         db.close();
                     });
                 }else{
