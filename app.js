@@ -56,7 +56,7 @@ app.get('*',function(req, res){
                         db.close();
                     });
                 }else{
-                //retrive entry
+                //retrieve entry
                 data = data[0];
                 res.end(JSON.stringify({original_url : data.url, short_url : 'https://tin-url.herokuapp.com/'+data.value}));
                 db.close();
